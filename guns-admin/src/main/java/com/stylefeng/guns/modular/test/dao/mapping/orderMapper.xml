@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://hc.supconit.com/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.stylefeng.guns.modular.test.dao.OrderDaoMapper">
+    <resultMap type="com.stylefeng.guns.modular.test.entity.OrderEntity" id="orderMap">
+        <result property="userId" column="user_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="orderPrice" column="order_price"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="orderAddress" column="order_address"/><!--//comlumn 数据库字段-->
+    </resultMap>
+
+
+    <select id="getAll" resultMap="orderMap"><!--parameterType返回对象类型-->
+       select user_id,order_id,order_price,order_status,order_address  from tb_order
+    </select>
+</mapper>

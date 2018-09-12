@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://hc.supconit.com/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.stylefeng.guns.modular.good.dao.GoodDaoMapper">
+    <resultMap type="com.stylefeng.guns.modular.good.entity.GoodEntity" id="goodMap">
+        <result property="goodPrice" column="good_price"/>
+        <result property="goodId" column="good_id"/>
+        <result property="goodName" column="good_name"/>
+        <result property="goodSize" column="good_size"/>
+        <result property="goodColor" column="good_color"/><!--//comlumn 数据库字段-->
+    </resultMap>
+
+
+    <select id="getGood" resultMap="goodMap"><!--parameterType返回对象类型-->
+       select good_price,good_id,good_name,good_size,good_color  from tb_good
+    </select>
+</mapper>
